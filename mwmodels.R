@@ -30,7 +30,7 @@ theme_manuscript <- function(){
 ## initial conditions 
 model_states <- function(){
   
-  initial_states <- read_excel("Datasets/vector_states_parameters.xlsx", sheet = "States")
+  initial_states <- read_excel("vector_states_parameters.xlsx", sheet = "States")
   
   temp_states <- initial_states %>% 
     select(!description) %>% 
@@ -50,7 +50,7 @@ model_states <- function(){
 ## base model parameters
 model_parameters <- function(){
   
-  base_parameters <- read_excel("Datasets/vector_states_parameters.xlsx", sheet = "Parameters")
+  base_parameters <- read_excel("vector_states_parameters.xlsx", sheet = "Parameters")
   
   temp_parameters <- base_parameters %>% 
     select(!description) %>% 
@@ -66,9 +66,9 @@ model_parameters <- function(){
 ## datasets were obtained from: https://cckpapi.worldbank.org/cckp/v1/era5-x0.25_timeseries_pr,tas_timeseries_monthly_1950-2022_mean_historical_era5_x0.25_mean/ZAF?_format=json
 cckp_weather <- function(){
   
-  temps_values <- read_excel("Datasets/CCKP/era5-x0.25_timeseries_tas_timeseries_monthly_1950-2022_mean_historical_era5_x0.25_mean.xlsx")
+  temps_values <- read_excel("era5-x0.25_timeseries_tas_timeseries_monthly_1950-2022_mean_historical_era5_x0.25_mean.xlsx")
   
-  rains_values <- read_excel("Datasets/CCKP/era5-x0.25_timeseries_pr_timeseries_monthly_1950-2022_mean_historical_era5_x0.25_mean.xlsx")
+  rains_values <- read_excel("era5-x0.25_timeseries_pr_timeseries_monthly_1950-2022_mean_historical_era5_x0.25_mean.xlsx")
   
   temp_weather <- function(values){
     values %>%
